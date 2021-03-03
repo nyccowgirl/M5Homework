@@ -231,7 +231,6 @@ public class LList<T extends Comparable<? super T>> implements ListInterface<T> 
 		return lessThanList;
 	}
 	
-	
 	public T getMax() {
 		T largestObject = null;
 
@@ -277,10 +276,6 @@ public class LList<T extends Comparable<? super T>> implements ListInterface<T> 
 			}
 		}
 	}
-
-
-
-	
 
 
 	private class Node {

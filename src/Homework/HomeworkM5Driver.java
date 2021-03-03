@@ -167,6 +167,7 @@ public class HomeworkM5Driver {
 	 * generics at a level beyond which we use in our class. I only use them here to make this a robust 
 	 * and useful testing file. You are NOT required to understand the use of generics in this way.
 	 */
+
 	public static void testPrintAtInterval(String[] chainContents, int interval, String expectedOutput) {
 		List<Node<String>> nodeList = new ArrayList<Node<String>>();
 		Node<String> firstNode = null;
@@ -193,6 +194,7 @@ public class HomeworkM5Driver {
 		System.out.print("Actual output:  \t");
 		printAtInterval(firstNode, interval); 
 	}
+
 	public static <T extends Comparable<? super T>> void testRemoveAll(T[] valuesToAdd, T valueToRemove, String testDescription) {
 		LinkedBag<T> originalBag = new LinkedBag<T>();
 		LinkedBag<T> resultsBag = new LinkedBag<T>();
@@ -232,6 +234,7 @@ public class HomeworkM5Driver {
 			System.out.println("*****Test failed for: " + testDescription);
 			System.out.println("     Updated bag does not have the expected contents.");				}
 	}
+
 	public static <T extends Comparable<? super T>> void testGetMax(T[] valuesToAdd, String testDescription) {
 		LList<T> list = new LList<T>();
 		ArrayList<T> arrayList = new ArrayList<T>();
@@ -274,6 +277,7 @@ public class HomeworkM5Driver {
 			}
 		}
 	}
+
 	public static <T extends Comparable<? super T>> void testAddAll(T[] initialListContents, T[] arrayToAdd, String testDescription) {
 		LList<T> originalList = new LList<T>();
 		LList<T> resultList = new LList<T>();
@@ -295,6 +299,7 @@ public class HomeworkM5Driver {
 			System.out.println("*****Test failed for: " + testDescription);
 		}	
 	}
+
 	public static void testPalindrome(Integer[] chainContents, boolean expectedResult, String testDescription) {
 		ArrayList<DoubleNode<Integer>>nodeList = new ArrayList<DoubleNode<Integer>>();
 		for(Integer valueToAdd : chainContents) {
