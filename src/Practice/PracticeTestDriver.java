@@ -139,7 +139,6 @@ public class PracticeTestDriver {
         // Question 12:
         System.out.println("Middle element: " + findMiddleElement(firstNode));
 
-
     }
 
     // Question 5:

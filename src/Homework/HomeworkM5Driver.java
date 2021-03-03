@@ -82,43 +82,44 @@ public class HomeworkM5Driver {
 		testGetMax(new String[]{"l", "a", "w", "n"}, "list with Strings (earlier letters are considered smaller)");
 
 
-//		System.out.println("\n*********************************TESTING QUESTION: LLIST ADD ALL");
-//		// parameter 1: the contents of the LList
-//		// parameter 2: the contents of the array to add to the end of the LList
-//		// parameter 3: a description of the test
-//		testAddAll(new String[]{}, 					new String[]{"peach"}, 		"	add a 1-element array to an empty list");
-//		testAddAll(new String[]{}, 					new String[]{"banana", "date", "grape", "eggplant",	"jicama", "grape"}, 	"add multiple elements to an empty list");
-//		testAddAll(new String[]{"apple", "peach"}, 	new String[]{"banana", "date", "grape", "eggplant",	"jicama", "grape" }, 	"add an array to a non-empty list");
-//		testAddAll(new String[]{"peach"}, 			new String[]{}, 				"add an empty array to a non-empty list");
-//		testAddAll(new String[]{}, 					new String[]{}, 				"add an empty array to an empty list");
-//		testAddAll(new Integer[]{1, 2, 3}, 			new Integer[]{4, 5, 6}, 		"test with Integers");
-//
-//		System.out.println("\nTesting efficiency: The elapsed time should be probably < 100.");
-//		System.out.println("If the elapsed time is much higher than that, you might revisit your code to see if you have a nested loop.");
-//		LList<Integer> bigList = new LList<Integer>();
-//		Integer[] bigArray = new Integer[100000];
-//		for(int i=0; i<bigArray.length; i++) {
-//			bigArray[i] = 99;
-//		}
-//		long startTimeList = System.currentTimeMillis();
-//		bigList.addAll(bigArray);
-//		long stopTimeList= System.currentTimeMillis();
-//		System.out.println("Elapsed time = " + (stopTimeList - startTimeList));
-//
-//
-//		System.out.println("\n*********************************TESTING QUESTION EXTRA CREDIT: DOUBLE NODE PALINDROME");
-//		// parameter 1: the contents of the doubly-linked chain
-//		// parameter 2: the expected result (true if the chain is a palindrome, false otherwise)
-//		// parameter 3: a description of the test
-//		testPalindrome(new Integer[] {4, 3, 4, 3, 4}, true, "odd length palindrome");
-//		testPalindrome(new Integer[] {1, 2, 2, 1}, true, "even length palindrome");
-//		testPalindrome(new Integer[] {5, 6}, false, "even length non-palindrome");
-//		testPalindrome(new Integer[] {1, 3, 2, 1}, false, "even length non-palindrome");
-//		testPalindrome(new Integer[] {3, 4, 3, 4}, false, "even length non-palindrome");
-//		testPalindrome(new Integer[] {4, 3, 3, 2, 4}, false, "odd length non-palindrome");
-//		testPalindrome(new Integer[] {4, 2, 1, 2, 3}, false, "odd length non-palindrome");
-//		testPalindrome(new Integer[] {}, true, "empty palindrome");
-//		testPalindrome(new Integer[] {5}, true, "singleton palindrome");
+		System.out.println("\n*********************************TESTING QUESTION: LLIST ADD ALL");
+		// parameter 1: the contents of the LList
+		// parameter 2: the contents of the array to add to the end of the LList
+		// parameter 3: a description of the test
+		testAddAll(new String[]{}, 					new String[]{"peach"}, 		"	add a 1-element array to an empty list");
+		testAddAll(new String[]{}, 					new String[]{"banana", "date", "grape", "eggplant",	"jicama", "grape"}, 	"add multiple elements to an empty list");
+		testAddAll(new String[]{"apple", "peach"}, 	new String[]{"banana", "date", "grape", "eggplant",	"jicama", "grape" }, 	"add an array to a non-empty list");
+		testAddAll(new String[]{"peach"}, 			new String[]{}, 				"add an empty array to a non-empty list");
+		testAddAll(new String[]{}, 					new String[]{}, 				"add an empty array to an empty list");
+		testAddAll(new Integer[]{1, 2, 3}, 			new Integer[]{4, 5, 6}, 		"test with Integers");
+
+		System.out.println("\nTesting efficiency: The elapsed time should be probably < 100.");
+		System.out.println("If the elapsed time is much higher than that, you might revisit your code to see if you have a nested loop.");
+		LList<Integer> bigList = new LList<Integer>();
+		Integer[] bigArray = new Integer[100000];
+		for(int i=0; i<bigArray.length; i++) {
+			bigArray[i] = 99;
+		}
+		long startTimeList = System.currentTimeMillis();
+		bigList.addAll(bigArray);
+		long stopTimeList= System.currentTimeMillis();
+		System.out.println("Elapsed time = " + (stopTimeList - startTimeList));
+
+
+		System.out.println("\n*********************************TESTING QUESTION EXTRA CREDIT: DOUBLE NODE PALINDROME");
+		// parameter 1: the contents of the doubly-linked chain
+		// parameter 2: the expected result (true if the chain is a palindrome, false otherwise)
+		// parameter 3: a description of the test
+		testPalindrome(new Integer[] {4, 3, 4, 3, 4}, true, "odd length palindrome");
+		testPalindrome(new Integer[] {1, 2, 2, 1}, true, "even length palindrome");
+		testPalindrome(new Integer[] {5, 6}, false, "even length non-palindrome");
+		testPalindrome(new Integer[] {1, 3, 2, 1}, false, "even length non-palindrome");
+		testPalindrome(new Integer[] {3, 4, 3, 4}, false, "even length non-palindrome");
+		testPalindrome(new Integer[] {4, 3, 3, 2, 4}, false, "odd length non-palindrome");
+		testPalindrome(new Integer[] {4, 2, 1, 2, 3}, false, "odd length non-palindrome");
+		testPalindrome(new Integer[] {}, true, "empty palindrome");
+		testPalindrome(new Integer[] {5}, true, "singleton palindrome");
+
 	}
 
 	public static void printAtInterval(Node<String> firstNode, int interval) {
@@ -144,8 +145,17 @@ public class HomeworkM5Driver {
 	}
 	
 	public static boolean isDoublyLinkedPalindromeList(DoubleNode<Integer> firstNode, DoubleNode<Integer> lastNode)  {
-		// YOUR EXTRA CREDIT CODE HERE
-		return false;
+		DoubleNode front = firstNode;
+		DoubleNode back = lastNode;
+		boolean result = true;						// Assertion: empty or singleton is palindrome
+
+		while (result && (front != back)) {
+			result = front.data.equals(back.data);	// If it is not equal, result will be false and end loop
+			front = front.next;
+			back = back.previous;
+		}
+
+		return result;
 	}
 
 

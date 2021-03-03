@@ -254,7 +254,28 @@ public class LList<T extends Comparable<? super T>> implements ListInterface<T> 
 	}
 
 	public void addAll(T[] items) {
-		// YOUR CODE HERE
+		int size = items.length;
+
+		if (size > 0) {
+			Node startNode = new Node(items[0]);
+			Node lastNode;
+
+			if (isEmpty()) {
+				firstNode = startNode;
+				lastNode = firstNode;
+			} else {
+				lastNode = getNodeAt(numberOfEntries);
+				lastNode.next = startNode;
+				lastNode = lastNode.next;
+			}
+			numberOfEntries++;
+
+			for (int i = 1; i < size; i++) {
+				lastNode.next = new Node(items[i]);
+				numberOfEntries++;
+				lastNode = lastNode.next;
+			}
+		}
 	}
 
 
