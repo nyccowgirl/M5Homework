@@ -233,8 +233,24 @@ public class LList<T extends Comparable<? super T>> implements ListInterface<T> 
 	
 	
 	public T getMax() {
-		// YOUR CODE HERE
-		return null;
+		T largestObject = null;
+
+		if (!isEmpty()) {
+			largestObject = firstNode.data;
+			Node current = firstNode.next;
+
+			while (current != null) {
+				T currentObject = current.data;
+
+				if (currentObject.compareTo(largestObject) > 0) {
+					largestObject = currentObject;					// Replace largestObject with currentObject
+				}
+
+				current = current.next;
+			}
+		}
+
+		return largestObject;
 	}
 
 	public void addAll(T[] items) {

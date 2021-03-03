@@ -26,62 +26,62 @@ public class HomeworkM5Driver {
 		testPrintAtInterval(new String[] {"x"}, 4, "x");
 		
 
-//		System.out.println("\n*********************************TESTING removeAll IN LinkedBag METHOD*********************************");
-//		System.out.println("Note: the expected and actual bag contents do not have to have the same order- only the same contents.");
-//
-//		// parameter 1: the contents of the LinkedBag
-//		// parameter 2: the item to remove all of
-//		// parameter 3: a description of the test
-//		testRemoveAll(new Integer[] {}, 1, "empty bag");
-//
-//		testRemoveAll(new Integer[] {1}, 1, "singleton bag with matching element");
-//		testRemoveAll(new Integer[] {2}, 1, "singleton bag without matching element");
-//
-//		testRemoveAll(new Integer[] {2, 2, 2}, 2, "odd sized bag with all matches");
-//		testRemoveAll(new Integer[] {3, 3, 3, 3}, 3, "even sized bag with all matches");
-//
-//		testRemoveAll(new Integer[] {3, 4, 5}, 5, "bag with one match added last");
-//		testRemoveAll(new Integer[] {2, 3, 4, 5}, 5, "bag with one match added last");
-//		testRemoveAll(new Integer[] {3, 4, 5}, 3, "bag with one match added first");
-//		testRemoveAll(new Integer[] {3, 4, 5}, 4, "bag with one match added in the middle");
-//
-//		testRemoveAll(new Integer[] {1, 1, 2, 4, 1, 5, 1}, 1, "bag with some matches");
-//		testRemoveAll(new Integer[] {1, 1, 3, 1, 1, 4, 1, 5, 1, 1}, 1, "bag with some matches");
-//
-//		testRemoveAll(new Integer[] {1, 1, 3, 1, 4, 1, 5, 1}, 6, "bag with no matches");
-//
-//		testRemoveAll(new String[] {"a", "b", "c"}, new String("a"), "bag with Strings");
-//
-//		System.out.println("\nTesting efficiency: The elapsed time should be probably < 100.");
-//		System.out.println("If the elapsed time is much higher than that, you might revisit your code to see if you have a nested loop.");
-//		LinkedBag<Integer> bigBag = new LinkedBag<Integer>();
-//		for(int i=0; i<100000; i++) {
-//			bigBag.add(99);
-//		}
-//		for(int i=0; i<100000; i++) {
-//			bigBag.add(43);
-//		}
-//		long startTimeBag = System.currentTimeMillis();
-//		bigBag.removeAll(99);
-//		long stopTimeBag = System.currentTimeMillis();
-//		System.out.println("Elapsed time = " + (stopTimeBag - startTimeBag));
-//
-//
-//		System.out.println("\n*********************************TESTING QUESTION: LLIST GET MAX");
-//		// parameter 1: the contents to add to an originally empty list
-//		// parameter 2: a description of the test
-//		testGetMax(new Integer[]{1, 2, 1, 4, 3}, "max in the middle");
-//		testGetMax(new Integer[]{1, 2, 1, 4, 3, 1}, "max in the middle");
-//		testGetMax(new Integer[]{1, 1, 4, 3, 1, 4}, "duplicate max");
-//		testGetMax(new Integer[]{1, 4, 3, 1, 4, 6}, "max at the end");
-//		testGetMax(new Integer[]{9, 1, 2, 1, 4, 3}, "max at the beginning");
-//		testGetMax(new Integer[]{7}, "singleton");
-//		testGetMax(new Integer[]{}, "empty list");
-//		testGetMax(new String[]{"a", "m", "z"}, "list with Strings (earlier letters are considered smaller)");
-//		testGetMax(new String[]{"z", "e", "b", "r", "a"}, "list with Strings (earlier letters are considered smaller)");
-//		testGetMax(new String[]{"l", "a", "w", "n"}, "list with Strings (earlier letters are considered smaller)");
-//
-//
+		System.out.println("\n*********************************TESTING removeAll IN LinkedBag METHOD*********************************");
+		System.out.println("Note: the expected and actual bag contents do not have to have the same order- only the same contents.");
+
+		// parameter 1: the contents of the LinkedBag
+		// parameter 2: the item to remove all of
+		// parameter 3: a description of the test
+		testRemoveAll(new Integer[] {}, 1, "empty bag");
+
+		testRemoveAll(new Integer[] {1}, 1, "singleton bag with matching element");
+		testRemoveAll(new Integer[] {2}, 1, "singleton bag without matching element");
+
+		testRemoveAll(new Integer[] {2, 2, 2}, 2, "odd sized bag with all matches");
+		testRemoveAll(new Integer[] {3, 3, 3, 3}, 3, "even sized bag with all matches");
+
+		testRemoveAll(new Integer[] {3, 4, 5}, 5, "bag with one match added last");
+		testRemoveAll(new Integer[] {2, 3, 4, 5}, 5, "bag with one match added last");
+		testRemoveAll(new Integer[] {3, 4, 5}, 3, "bag with one match added first");
+		testRemoveAll(new Integer[] {3, 4, 5}, 4, "bag with one match added in the middle");
+
+		testRemoveAll(new Integer[] {1, 1, 2, 4, 1, 5, 1}, 1, "bag with some matches");
+		testRemoveAll(new Integer[] {1, 1, 3, 1, 1, 4, 1, 5, 1, 1}, 1, "bag with some matches");
+
+		testRemoveAll(new Integer[] {1, 1, 3, 1, 4, 1, 5, 1}, 6, "bag with no matches");
+
+		testRemoveAll(new String[] {"a", "b", "c"}, new String("a"), "bag with Strings");
+
+		System.out.println("\nTesting efficiency: The elapsed time should be probably < 100.");
+		System.out.println("If the elapsed time is much higher than that, you might revisit your code to see if you have a nested loop.");
+		LinkedBag<Integer> bigBag = new LinkedBag<Integer>();
+		for(int i=0; i<100000; i++) {
+			bigBag.add(99);
+		}
+		for(int i=0; i<100000; i++) {
+			bigBag.add(43);
+		}
+		long startTimeBag = System.currentTimeMillis();
+		bigBag.removeAll(99);
+		long stopTimeBag = System.currentTimeMillis();
+		System.out.println("Elapsed time = " + (stopTimeBag - startTimeBag));
+
+
+		System.out.println("\n*********************************TESTING QUESTION: LLIST GET MAX");
+		// parameter 1: the contents to add to an originally empty list
+		// parameter 2: a description of the test
+		testGetMax(new Integer[]{1, 2, 1, 4, 3}, "max in the middle");
+		testGetMax(new Integer[]{1, 2, 1, 4, 3, 1}, "max in the middle");
+		testGetMax(new Integer[]{1, 1, 4, 3, 1, 4}, "duplicate max");
+		testGetMax(new Integer[]{1, 4, 3, 1, 4, 6}, "max at the end");
+		testGetMax(new Integer[]{9, 1, 2, 1, 4, 3}, "max at the beginning");
+		testGetMax(new Integer[]{7}, "singleton");
+		testGetMax(new Integer[]{}, "empty list");
+		testGetMax(new String[]{"a", "m", "z"}, "list with Strings (earlier letters are considered smaller)");
+		testGetMax(new String[]{"z", "e", "b", "r", "a"}, "list with Strings (earlier letters are considered smaller)");
+		testGetMax(new String[]{"l", "a", "w", "n"}, "list with Strings (earlier letters are considered smaller)");
+
+
 //		System.out.println("\n*********************************TESTING QUESTION: LLIST ADD ALL");
 //		// parameter 1: the contents of the LList
 //		// parameter 2: the contents of the array to add to the end of the LList
@@ -127,16 +127,16 @@ public class HomeworkM5Driver {
 		if (firstNode == null) {
 			s = "";
 		} else {
-			s = firstNode.data;
-			Node current = firstNode.next;
+			s = firstNode.getData();					// utilizing getters because it is client perspective
+			Node current = firstNode.getNextNode();
 			int position = 1;
 
 			while (current != null) {
 				if (position % interval == 0) {
-					s += " " + current.data;
+					s += " " + current.getData();
 				}
 				position++;
-				current = current.next;
+				current = current.getNextNode();
 			}
 		}
 
